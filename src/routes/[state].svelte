@@ -4,7 +4,7 @@
   export async function preload(page){
     const state = page.params['state'];
     if(stateNames.find(s => s.abbreviation === state) === undefined){
-      console.log('should get error')
+      console.log('not found')
       this.error(404,'State Not Found')
       return;
     }

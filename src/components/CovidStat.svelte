@@ -1,4 +1,5 @@
 <script>
+  //Receiving props
   export let cases;
   export let deaths;
   export let recovered;
