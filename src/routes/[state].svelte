@@ -1,6 +1,12 @@
 <script context="module">
+  import stateNames from '../data/stateName'
   export async function preload(page){
-    console.log(page)
+    const state = page.params['state'];
+    if(stateNames.find(s => s.abbreviation === state) === undefined){
+      console.log('should get error')
+      this.error(404,'State Not Found')
+      return;
+    }
     return { state: page.params['state'] }
   }
 </script>
