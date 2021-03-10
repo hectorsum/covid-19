@@ -3,16 +3,21 @@
   import requests from '../data/request'
   export async function preload(page){
     const state = page.params['state'];
-    if(stateNames.find(s => s.abbreviation === state) === undefined){
-      console.log('not found')
+    if (stateNames.find(s => s.abbreviation === state) === undefined) {
       this.error(404,'State Not Found')
       return;
     }
-    try{
-      const stats = await requests.stateStats(state)
-      return { state, stats}
-    }catch(e){
-      this.error(500, 'There was an error in calling the api, please try again in 5 minutes')
+    const fullStateName = stateNames.find(s => s.abbreviation === state).name;
+    try {
+      const stats = await requests.stateStats(state);
+      // const historic = await requests.historicState(state);
+      return { state:fullStateName, stats };
+    } catch (e) {
+      console.log('error: ',e)
+      this.error(
+        500,
+        "There was an error in calling the api, please try again in 5 minutes."
+      );
       return;
     }
   }
@@ -23,6 +28,8 @@
   //* Exporting props
   export let state;
   export let stats;
+  // export let historic;
+  // console.log(historic,'StateHistoric')
 </script>
 
 <!-- Svelte:head - This is to override the title -->
