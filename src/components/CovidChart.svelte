@@ -14,7 +14,6 @@
       createChart();
       return;
     }
-
     hideChart = true;
   });
 
@@ -37,9 +36,7 @@
             label: function(tooltipItem, data) {
               let label = data.datasets[tooltipItem.datasetIndex].label;
               label += ": ";
-
               label += tooltipItem.yLabel.toLocaleString();
-
               return label;
             }
           }

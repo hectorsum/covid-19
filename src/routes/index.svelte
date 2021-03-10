@@ -5,7 +5,8 @@
       // throw new Error('this is bad');
       const usStats = await requests.usStats();
       const historic = await requests.historicUS();
-      return {usStats, historic};
+      const statesData = await requests.statesData();
+      return {usStats, historic,statesData};
     } catch (e) {
       console.log(e)
       this.error(500, 'There was an error in calling the api, please try again in 5 minutes')
@@ -17,12 +18,10 @@
 import CovidChart from '../components/CovidChart.svelte';
 import CovidStat from '../components/CovidStat.svelte'
 import TableContainer from '../components/TableContainer.svelte';
-import About from './about.svelte';
-import Error from './_error.svelte';
 export let usStats;
 export let historic;
-console.log(usStats,"usStats");
-console.log(historic,"historic");
+export let statesData;
+console.log(statesData,"statesData");
 </script>
 
 <!-- Svelte:head - This is to override the title -->
@@ -36,4 +35,4 @@ console.log(historic,"historic");
 </div>
 <CovidStat {...usStats}/>
 <CovidChart historicData={historic} title="US Covid 19"/>
-<TableContainer/>
+<TableContainer data={statesData} />
