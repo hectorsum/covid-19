@@ -13,7 +13,7 @@
 
 <div class="section">
   <div class="container">
-    <table class="table is-bordered is-striped w-100">
+    <table class="table is-bordered is-striped is-fullwidth">
       <thead>
         <tr>
           <th>State</th>

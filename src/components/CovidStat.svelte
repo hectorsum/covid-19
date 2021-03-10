@@ -18,7 +18,7 @@
 
 <div class="section">
   <div class="container">
-    <div class="columns cols">
+    <div class="columns cols" style="border: solid 2px black;">
       <div class="is-3 column">Cases: {cases} </div>
       <div class="is-3 column">Deaths: {deaths}</div>
       <div class="is-3 column">Recovered: {recovered}</div>
@@ -29,7 +29,7 @@
 
 <div class="section">
   <div class="container">
-    <div class="columns cols">
+    <div class="columns cols" style="border: solid 2px black;">
       <div class="is-3 column">Tested: {tested}</div>
       <div class="is-3 column">Hospitalized: {hospitalized}</div>
       <div class="is-3 column">Total ICU: {icu}</div>

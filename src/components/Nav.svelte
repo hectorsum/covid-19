@@ -14,7 +14,7 @@
   }
 </style>
 
-<nav class="navbar" role="navigation" aria-label="main navigation">
+<nav class="navbar" role="navigation" aria-label="main navigation" style="border-bottom: solid gray 2px">
   <div class="navbar-brand">
     <a rel="prefetch" href="/" class="navbar-item">
       <img src="logo.jpg" alt="virus" />
