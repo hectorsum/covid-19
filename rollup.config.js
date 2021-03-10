@@ -9,6 +9,7 @@ import { terser } from 'rollup-plugin-terser';
 import config from 'sapper/config/rollup.js';
 import pkg from './package.json';
 import css from 'rollup-plugin-css-only';
+import ghPages from 'gh-pages';
 
 const mode = process.env.NODE_ENV;
 const dev = mode === 'development';
@@ -121,7 +122,9 @@ export default {
 				},
 			}),
 			commonjs(),
-			!dev && terser()
+			!dev && terser() && ghPages.publish('__sapper__/build',(err) => {
+        console.log('Published to github',err)
+      })
 		],
 		preserveEntrySignatures: false,
 		onwarn,

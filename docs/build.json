@@ -1,0 +1,34 @@
+{
+  "bundler": "rollup",
+  "shimport": "2.0.4",
+  "assets": {
+    "main": "client.243099c8.js"
+  },
+  "css": {
+    "main": [
+      "client-ec2f6238.css"
+    ]
+  },
+  "dependencies": {
+    "index.svelte": [
+      "index.8e92b04f.js",
+      "CovidStat.f67dc565.js",
+      "inject_styles.5607aec6.js",
+      "CovidStat-06494acf.css",
+      "index-f2e9b775.css"
+    ],
+    "about.svelte": [
+      "about.96c0cd0d.js",
+      "inject_styles.5607aec6.js"
+    ],
+    "[state].svelte": [
+      "[state].c3049aaa.js",
+      "CovidStat.f67dc565.js",
+      "inject_styles.5607aec6.js",
+      "CovidStat-06494acf.css"
+    ]
+  },
+  "legacy_assets": {
+    "main": "client.224b8c5d.js"
+  }
+}
